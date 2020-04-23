@@ -1,0 +1,440 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+          name="viewport">
+    <meta content="ie=edge" http-equiv="X-UA-Compatible">
+    <title>ARU Emoticons 阿鲁表情包</title>
+    <style>
+        :root {
+            --theme: #2196F3;
+            --theme_light: #90caf9;
+            --theme_dark: #1976d2;
+        }
+
+        html, body {
+            margin: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        * {
+            transition: 100ms ease-in-out;
+        }
+
+        a, a:link, a:active, a:visited {
+            text-decoration: none;
+            color: var(--theme_dark);
+        }
+
+        b {
+            color: var(--theme_dark);
+        }
+
+        [ripple] {
+            position: relative;
+            overflow: hidden;
+        }
+
+        [ripple] .ripple--container {
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+        }
+
+        [ripple] .ripple--container span {
+            transform: scale(0);
+            border-radius: 100%;
+            position: absolute;
+            opacity: 0.5;
+            background-color: #fff;
+            animation: ripple 1000ms;
+        }
+
+        @keyframes ripple {
+            to {
+                opacity: 0;
+                transform: scale(2);
+            }
+        }
+
+        #dashboard {
+            font-size: 0;
+            width: 100%;
+            height: 100%;
+            position: relative;
+        }
+
+        #responsePanel {
+            width: 300px;
+            height: 100%;
+            vertical-align: middle;
+            display: inline-block;
+            border-right: 2px solid #efefef;
+            box-sizing: border-box;
+        }
+
+        #change {
+            font: 14px/1 Anodina, sans-serif;
+            padding: 12px;
+            text-align: center;
+            height: 36px;
+        }
+
+        #leftToggle, #rightToggle {
+            width: 36px;
+            height: 36px;
+            border: 2px solid var(--theme_light);
+            display: inline-block;
+            text-align: center;
+            font: 18px/28px Anodina, sans-serif;
+            font-weight: bold;
+            cursor: pointer;
+            box-sizing: border-box;
+            margin: 0 12px;
+            vertical-align: middle;
+        }
+
+        #leftToggle:hover, #leftToggle:focus, #rightToggle:hover, #rightToggle:focus {
+            border-color: var(--theme_dark);
+            background: #efefef;
+        }
+
+        #selector {
+            padding: 12px;
+            font: 14px/21px Anodina, sans-serif;
+            text-align: center;
+            cursor: pointer;
+            user-select: none;
+        }
+
+        #selector:hover {
+            background: #efefef;
+        }
+
+        #response {
+            width: 240px;
+            margin: 0 auto;
+        }
+
+        .responseTypeName {
+            border-bottom: 2px solid var(--theme_light);
+            font: 14px/1 Anodina, sans-serif;
+            padding: 12px;
+            margin-bottom: 6px;
+        }
+
+        #response > * > :nth-child(2) {
+            font: 14px/21px Anodina, sans-serif;
+        }
+
+        #response > * > :nth-child(2) > div[role="button"] {
+            width: calc(50% - 28px);
+            display: inline-block;
+            padding: 12px;
+            text-align: center;
+            cursor: pointer;
+            border: 2px solid #efefef;
+        }
+
+        #response > * > :nth-child(2).size > div[role="button"] {
+            width: calc(33% - 28px);
+        }
+
+        #response > * > :nth-child(2) > div[role="button"]:hover, #response > * > :nth-child(2) > div[role="button"]:focus {
+            background: #efefef;
+        }
+
+        #response > * > :nth-child(2) > div[role="button"].active {
+            border-color: var(--theme_light)
+        }
+
+        #response > * > :nth-child(2) > :not([role="button"]) {
+            font: 12px/21px Anodina, sans-serif;
+            color: #666;
+        }
+
+        .responseImage {
+            padding: 12px;
+            height: 48px;
+            width: 180px;
+        }
+
+        .responseImage img {
+            margin: 6px;
+            height: 36px;
+            display: inline-block;
+            vertical-align: middle;
+        }
+
+        .responseImage span {
+            display: inline-block;
+            vertical-align: middle;
+            font: 14px/1 Anodina, sans-serif;
+            float: right;
+            line-height: 48px !important;
+        }
+
+        .downloadButton {
+            text-align: center;
+            padding: 12px;
+            font: 900 14px/1 Anodina, sans-serif;
+            background: var(--theme_dark);
+            color: #fff;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+
+        .downloadButton:hover, .downloadButton:focus {
+            background: var(--theme)
+        }
+
+        #content {
+            width: calc(100% - 300px);
+            height: 100%;
+            vertical-align: middle;
+            display: inline-block;
+        }
+
+        .emoticon {
+            display: inline-block;
+            padding: 12px;
+            width: 60px;
+            height: 60px;
+            vertical-align: middle;
+            position: relative;
+            cursor: pointer;
+            border: 2px solid transparent;
+        }
+
+        .emoticon.active {
+            border-color: var(--theme);
+            background: #eee !important;
+        }
+
+        .emoticon:hover, .emoticon:focus {
+            background: #efefef;
+        }
+
+        .emoticon img {
+            display: block;
+            transform: translate(-50%, -50%);
+            position: absolute;
+            left: 50%;
+            top: 50%;
+        }
+    </style>
+</head>
+<body>
+<div id="dashboard">
+    <div id="responsePanel">
+        <div id="change">
+            <span id="leftToggle" onclick="init(curIndex-1<0?(config.filename.length-1):--curIndex);" ripple
+                  role="button">&lt;</span>
+            切换 Change
+            <span id="rightToggle" onclick="init(curIndex+1>=config.filename.length?0:(++curIndex));" ripple
+                  role="button">&gt;</span>
+        </div>
+        <div id="selector" role="button"></div>
+        <div id="response"></div>
+    </div>
+    <div id="content"></div>
+</div>
+</body>
+<script>
+    /**
+     * CONFIG
+     * @var name: {string} project name
+     * @var ver: {number} project version
+     * @var removeUrl-url: {string} remote server url
+     * @var type: {object} array[ext]
+     *  -> ext: {string} extension name
+     * @var size: {object} array[size]
+     *  -> size: {string} file size
+     * @var filename: {object} array[filename]
+     *  -> filename: {string} file name
+     */
+    const config = {
+        name: "ARU",
+        ver: 6.6,
+        removeUrl: "http://127.0.0.1/ARU",
+        type: ["PNG", "GIF"],
+        size: ["S", "L", "XL"],
+        filename: [{sub: ["0000", "0010", "0020", "0030", "0040", "0050", "0060", "0070", "0080", "0090", "0100", "0110", "0120", "0130", "0140", "0150", "0160", "0170", "0171", "0180", "0181", "0190", "0200", "0210", "0220", "0230", "0240", "0241", "0250", "0260", "0270", "0280", "0290", "0300", "0310", "0320", "0330", "0331", "0340", "0350", "0360", "0370", "0380", "0390", "0391", "0400", "0410", "0420", "0430", "0431", "0440", "0450", "0451", "0460", "0461", "0462", "0470", "0480", "0490", "0500", "0510", "0520", "0530", "0540", "0550", "0560", "0570", "0580", "0590", "0600", "0610", "0620"]}, {sub: ["1010", "1011", "1020", "1030", "1040", "1050", "1060", "1070", "1080"]}, {sub: ["2010", "2020", "2030", "2040", "2050", "2060", "2070", "2080", "2090", "2100", "2101", "2110", "2120", "2130", "2140", "2141", "2145", "2150", "2151", "2152", "2160", "2161", "2165", "2170", "2171"]}, {sub: ["3010", "3011", "3020", "3030", "3040", "3050", "3060", "3061"]}, {sub: ["4010", "4020", "4021", "4022", "4023", "4024", "4025", "4030", "4031", "4040", "4041", "4042", "4100", "4110", "4111", "4112", "4113", "4114", "4115", "4120", "4121", "4130", "4140", "4200", "4201", "4210", "4211", "4212", "4213", "4220", "4300", "4301", "4302", "4303", "4304", "4310"]}, {sub: ["5000", "5001", "5002", "5003", "5010", "5020", "5030", "5040", "5050", "5060", "5069", "5070", "5080", "5090", "5091", "5100", "5110", "5120", "5130", "5131", "5140", "5141", "5150", "5151", "5160", "5161", "5170", "5180", "5190", "5200", "5210", "5220", "5230"]}, {sub: ["6000", "6001", "6010", "6020", "6030", "6040", "6050", "6051", "6060", "6061", "6070", "6080", "6090", "6091", "6092", "6100", "6110", "6120", "6121", "6130", "6131", "6132", "6140", "6150", "6151", "6160", "6500", "6510", "6520", "6530"]}, {sub: ["7000", "7010", "7011", "7012", "7020", "7021", "7030", "7040", "7045", "7046", "7050", "7051", "7052", "7053", "7054", "7060", "7061", "7062", "7070", "7071", "7080", "7081", "7090", "7100", "7110", "7111", "7112", "7113", "7200", "7201", "7210", "7220", "7230"]}, {sub: ["8000", "8001", "8010", "8020", "8021", "8030", "8040", "8041", "8042", "8050", "8051", "8060", "8062", "8070", "8071", "8072", "8080", "8081", "8082", "8083", "8084", "8085", "8090", "8091", "8092", "8100", "8101", "8102", "8103", "8110", "8111"]}, {sub: ["x010", "x011", "x012", "x013", "x014", "x021", "x022", "x031", "x032", "x041", "x042", "x050", "x060", "x061", "x062", "x063", "x069", "x070", "x071", "x080", "x081", "x082", "x083", "x090", "x091", "x092", "x093", "x094", "x099"]}]
+    }
+    let curIndex = 0;
+    const cE = data => {
+        if (data === undefined) data = {
+            type: 'div',
+            attr: [],
+            innerText: undefined,
+            innerHTML: undefined,
+            onclick: undefined
+        };
+        let e = document.createElement(data.type);
+        if (data.attr !== undefined) data.attr.forEach(attr => {
+            e.setAttribute(attr[0], attr[1])
+        });
+        if (data.innerText !== undefined) e.innerText = data.innerText;
+        if (data.innerHTML !== undefined) e.innerHTML = data.innerHTML;
+        if (data.onclick !== undefined) e.onclick = e => {
+            data.onclick(e)
+        };
+        return e
+    };
+    const $ = e => {
+        return document.querySelectorAll(e).length === 1 ? document.querySelector(e) : document.querySelectorAll(e);
+    };
+    const initResponse = (id, index) => {
+        let downloadConfig = {type: "PNG", size: "S"};
+        const response = $("#response"), button = $("#selector");
+        button.innerHTML = `已选择 Selected: <b>${config.filename[id].sub[index]}</b>`;
+        response.innerHTML = "";
+        {
+            response.appendChild(cE({
+                type: "div",
+                attr: [["class", "responseImage"]],
+                innerHTML: `<img src='../resources/${config.name}-${config.ver}-PNG-S/PNG-S/${config.filename[id].sub[index]}.png' alt='ARU-${config.filename[id].sub[index]}' /><span>${config.filename[id].sub[index]}</span>`
+            }));
+        } // Selected Info
+        {
+            let selectorEl = cE({
+                type: "div",
+                attr: [["id", "typeSelector"]],
+                innerHTML: "<div class='responseTypeName'>图片类型 Image Type</div><div class='type'></div>"
+            });
+            selectorEl.children[1].appendChild(cE({
+                type: "div",
+                attr: [["role", "button"], ["class", "active"], ["ripple", ""]],
+                innerText: "PNG",
+                onclick: () => {
+                    downloadConfig.type = "PNG";
+                    selectorEl.querySelector(".active").classList.remove("active");
+                    selectorEl.children[1].children[0].classList.add("active");
+                    response.children[0].children[0].src = `../resources/${config.name}-${config.ver}-${downloadConfig.type}-${downloadConfig.size}/${downloadConfig.type}-${downloadConfig.size}/${config.filename[id].sub[index]}.${downloadConfig.type.toLowerCase()}`;
+                }
+            }));
+            selectorEl.children[1].appendChild(cE({
+                type: "div", attr: [["role", "button"], ["ripple", ""]], innerText: "GIF", onclick: () => {
+                    downloadConfig.type = "GIF";
+                    selectorEl.querySelector(".active").classList.remove("active");
+                    selectorEl.children[1].children[1].classList.add("active");
+                    response.children[0].children[0].src = `../resources/${config.name}-${config.ver}-${downloadConfig.type}-${downloadConfig.size}/${downloadConfig.type}-${downloadConfig.size}/${config.filename[id].sub[index]}.${downloadConfig.type.toLowerCase()}`;
+                }
+            }));
+            response.appendChild(selectorEl);
+        } // MIME Type
+        {
+            let selectorEl = cE({
+                type: "div",
+                attr: [["id", "typeSelector"]],
+                innerHTML: "<div class='responseTypeName'>图片尺寸 Image Size</div><div class='size'></div>"
+            });
+            selectorEl.children[1].appendChild(cE({
+                type: "div",
+                attr: [["role", "button"], ["class", "active"], ["ripple", ""]],
+                innerText: "S",
+                onclick: () => {
+                    downloadConfig.size = "S";
+                    selectorEl.querySelector(".active").classList.remove("active");
+                    selectorEl.children[1].children[0].classList.add("active");
+                    response.children[0].children[0].src = `../resources/${config.name}-${config.ver}-${downloadConfig.type}-${downloadConfig.size}/${downloadConfig.type}-${downloadConfig.size}/${config.filename[id].sub[index]}.${downloadConfig.type.toLowerCase()}`;
+                }
+            }));
+            selectorEl.children[1].appendChild(cE({
+                type: "div", attr: [["role", "button"], ["ripple", ""]], innerText: "L", onclick: () => {
+                    downloadConfig.size = "L";
+                    selectorEl.querySelector(".active").classList.remove("active");
+                    selectorEl.children[1].children[1].classList.add("active");
+                    response.children[0].children[0].src = `../resources/${config.name}-${config.ver}-${downloadConfig.type}-${downloadConfig.size}/${downloadConfig.type}-${downloadConfig.size}/${config.filename[id].sub[index]}.${downloadConfig.type.toLowerCase()}`;
+                }
+            }));
+            selectorEl.children[1].appendChild(cE({
+                type: "div", attr: [["role", "button"], ["ripple", ""]], innerText: "XL", onclick: () => {
+                    downloadConfig.size = "XL";
+                    selectorEl.querySelector(".active").classList.remove("active");
+                    selectorEl.children[1].children[2].classList.add("active");
+                    response.children[0].children[0].src = `../resources/${config.name}-${config.ver}-${downloadConfig.type}-${downloadConfig.size}/${downloadConfig.type}-${downloadConfig.size}/${config.filename[id].sub[index]}.${downloadConfig.type.toLowerCase()}`;
+                }
+            }));
+            response.appendChild(selectorEl);
+        } // Size
+        {
+            response.appendChild(cE({
+                type: "div",
+                attr: [["role", "text"]],
+                innerHTML: "<div class='responseTypeName'>协议 Licence</div><div><p>请联系原作者 Contact Author</p><p>未经书面允许，请谨慎使用。本页面作者不拥有该表情版权，一切版权与解释权归属作者<a href='https://www.weibo.com/silenthiker'>@_SiC_</a>所有。</p><p>Be careful before using, without prior written permission may be prohibited. Copyright by <a href='https://www.weibo.com/silenthiker'>@_SiC_</a>, All rights to the interpretation of the above terms and conditions reserved.</p></div>"
+            }));
+        } // Copyright & License
+        {
+            response.appendChild(cE({
+                type: "div", attr: [["role", "button"], ["class", "downloadButton"], ["ripple", ""]],
+                innerText: "下载 Download", onclick: () => {
+                    cE({
+                        type: "a",
+                        attr: [["download", `${config.filename[id].sub[index]}.${downloadConfig.size}.${downloadConfig.type}`], ["href", `../resources/${config.name}-${config.ver}-${downloadConfig.type}-${downloadConfig.size}/${downloadConfig.type}-${downloadConfig.size}/${config.filename[id].sub[index]}.${downloadConfig.type.toLowerCase()}`]]
+                    }).click();
+                }
+            }));
+        } // Button
+    };
+    const init = (id) => {
+        curIndex = id;
+        const content = $("#content");
+        content.innerHTML = "";
+        config.filename[id].sub.forEach((name, index) => {
+            content.appendChild(cE({
+                type: "div",
+                attr: [["class", "emoticon"], ["role", "button"], ["ripple", ""]],
+                innerHTML: `<img src='../resources/${config.name}-${config.ver}-PNG-S/PNG-S/${name}.png' alt='ARU-${name}' />`,
+                onclick: (ev) => {
+                    if (content.querySelectorAll(".active")[0] !== undefined)
+                        content.querySelectorAll(".active")[0].classList.remove("active");
+                    content.querySelectorAll(".emoticon")[index].classList.add("active");
+                    initResponse(id, index);
+                    initRipple();
+                }
+            }));
+        });
+        initRipple();
+    };
+    const initRipple = () => {
+        let ripples = document.querySelectorAll('[ripple]'),
+            rippleContainer,
+            ripple, addRipple = function (e) {
+                let ripple = this,
+                    size = ripple.offsetWidth,
+                    pos = ripple.getBoundingClientRect(),
+                    rippler = document.createElement('span'),
+                    x = e.pageX - pos.left - (size / 2),
+                    y = e.pageY - pos.top - (size / 2),
+                    style = 'top:' + y + 'px; left:' + x + 'px; height: '
+                        + size + 'px; width: ' + size + 'px;';
+                ripple.rippleContainer.appendChild(rippler);
+                rippler.setAttribute('style', style);
+            }, cleanUp = function () {
+                try {
+                    let container = this.rippleContainer;
+                    while (this.rippleContainer.firstChild) {
+                        container.removeChild(container.firstChild);
+                    }
+                } catch (exception) {
+                }
+            };
+        for (let i = 0, len = ripples.length; i < len; i++) {
+            ripple = ripples[i];
+            rippleContainer = document.createElement('div');
+            rippleContainer.className = 'ripple--container';
+            ripple.addEventListener('mousedown', addRipple);
+            ripple.addEventListener('mouseup', () => setTimeout(cleanUp, 2000));
+            ripple.rippleContainer = rippleContainer;
+            ripple.appendChild(rippleContainer);
+        }
+    }
+    initResponse(0, 0);
+    init(0);
+</script>
+</html>
