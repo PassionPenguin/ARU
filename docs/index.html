@@ -483,6 +483,17 @@
                     sel.removeAllRanges(); //remove all ranges from selection
                     sel.addRange(range);//add Range to a Selection.
                     document.execCommand("copy");
+                    document.body.appendChild(cE({
+                        type: "div",
+                        attr: [["id", "copiedNotice"], ["style", "position:fixed;top:12px;right:12px;width:120px;height:28px;font:13px/28px Anodina,sans-serif;background:#666;color:#fff;padding:6px 12px;border-radius:3px;"]],
+                        innerText: "已复制 Copied"
+                    }));
+                    setTimeout(() => {
+                        $("#copiedNotice").style.opacity = "0";
+                        setTimeout(() => {
+                            document.body.removeChild($("#copiedNotice"));
+                        }, 500);
+                    }, 2500);
                 }, 1);
             }
         }
