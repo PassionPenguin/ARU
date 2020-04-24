@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="3025239e-d040-4e93-8879-0398c5695ee7" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -64,6 +64,7 @@
       <workItem from="1587612697382" duration="1175000" />
       <workItem from="1587614109828" duration="20000" />
       <workItem from="1587614146723" duration="10491000" />
+      <workItem from="1587695715318" duration="415000" />
     </task>
     <task id="LOCAL-00001" summary="init readme.md">
       <created>1587613394466</created>
@@ -100,7 +101,14 @@
       <option name="project" value="LOCAL" />
       <updated>1587653854733</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="update README.md">
+      <created>1587653915253</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1587653915253</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -111,21 +119,22 @@
     <MESSAGE value="update cover" />
     <MESSAGE value="update project &amp; HTML" />
     <MESSAGE value="clone from Baidu Cloud Disk" />
-    <option name="LAST_COMMIT_MESSAGE" value="clone from Baidu Cloud Disk" />
+    <MESSAGE value="update README.md" />
+    <option name="LAST_COMMIT_MESSAGE" value="update README.md" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="427" y="43" key="CommitChangelistDialog2" timestamp="1587653850468">
+    <state x="427" y="43" key="CommitChangelistDialog2" timestamp="1587653914130">
       <screen x="0" y="23" width="1680" height="1027" />
     </state>
-    <state x="427" y="43" key="CommitChangelistDialog2/0.23.1680.1027@0.23.1680.1027" timestamp="1587653850468" />
+    <state x="427" y="43" key="CommitChangelistDialog2/0.23.1680.1027@0.23.1680.1027" timestamp="1587653914130" />
     <state x="168" y="114" key="DiffContextDialog" timestamp="1587613372782">
       <screen x="0" y="23" width="1680" height="1027" />
     </state>
     <state x="168" y="114" key="DiffContextDialog/0.23.1680.1027@0.23.1680.1027" timestamp="1587613372782" />
-    <state x="440" y="272" key="Vcs.Push.Dialog.v2" timestamp="1587613623724">
+    <state x="440" y="272" key="Vcs.Push.Dialog.v2" timestamp="1587653917590">
       <screen x="0" y="23" width="1680" height="1027" />
     </state>
-    <state x="440" y="272" key="Vcs.Push.Dialog.v2/0.23.1680.1027@0.23.1680.1027" timestamp="1587613623724" />
+    <state x="440" y="272" key="Vcs.Push.Dialog.v2/0.23.1680.1027@0.23.1680.1027" timestamp="1587653917590" />
     <state x="634" y="195" key="com.intellij.openapi.vcs.changes.SpecificFilesViewDialog" timestamp="1587613377956">
       <screen x="0" y="23" width="1680" height="1027" />
     </state>
