@@ -182,17 +182,20 @@
             line-height: 48px !important;
         }
 
-        .downloadButton {
+        .buttonGroup > * {
             text-align: center;
-            padding: 12px;
-            font: 900 14px/1 Anodina, sans-serif;
+            padding: 12px 6px;
+            font: 900 14px/1 Anodina, sans-serif !important;
             background: var(--theme_dark);
             color: #fff;
             border-radius: 3px;
             cursor: pointer;
+            width: calc(50% - 24px);
+            display: inline-block;
+            margin: 0 6px;
         }
 
-        .downloadButton:hover, .downloadButton:focus {
+        .buttonGroup > *:hover, .buttonGroup > *:focus {
             background: var(--theme)
         }
 
@@ -392,21 +395,74 @@
         } // Copyright & License
         {
             response.appendChild(cE({
-                type: "div", attr: [["role", "button"], ["class", "downloadButton"], ["ripple", ""]],
-                innerText: "下载 Download", onclick: () => {
-                    cE({
-                        type: "a",
-                        attr: [["download", `${config.filename[id].sub[index]}.${downloadConfig.size}.${downloadConfig.type}`], ["href", `../resources/${config.name}-${config.ver}-${downloadConfig.type}-${downloadConfig.size}/${downloadConfig.type}-${downloadConfig.size}/${config.filename[id].sub[index]}.${downloadConfig.type.toLowerCase()}`]]
-                    }).click();
-                }
+                type: "div",
+                attr: [["role", "buttonGroup"], ["class", "buttonGroup"], ["style", "margin-top:12px;background:transparent;"]],
+                innerHTML: `<div role="button" ripple>复制 Copy</div><div role="button" ripple>下载 Download</div>`,
             }));
+            response.lastElementChild.children[0].onclick = () => {
+                cE({
+                    type: "a",
+                    attr: [["download", `${config.filename[id].sub[index]}.${downloadConfig.size}.${downloadConfig.type}`], ["href", `../resources/${config.name}-${config.ver}-${downloadConfig.type}-${downloadConfig.size}/${downloadConfig.type}-${downloadConfig.size}/${config.filename[id].sub[index]}.${downloadConfig.type.toLowerCase()}`]]
+                }).click();
+            };
+            response.lastElementChild.children[1].onclick = () => {
+                new Promise(function (resolve, reject) {
+                    try {
+                        let xhr = new XMLHttpRequest();
+                        xhr.open("GET", `../resources/${config.name}-${config.ver}-${downloadConfig.type}-${downloadConfig.size}/${downloadConfig.type}-${downloadConfig.size}/${config.filename[id].sub[index]}.${downloadConfig.type.toLowerCase()}`);
+                        xhr.responseType = "blob";
+                        xhr.onerror = function () {
+                            reject("Network error.")
+                        };
+                        xhr.onload = function () {
+                            if (xhr.status === 200) {
+                                resolve(xhr.response)
+                            } else {
+                                reject("Loading error:" + xhr.statusText)
+                            }
+                        };
+                        xhr.send();
+                    } catch (err) {
+                        reject(err.message)
+                    }
+                }).then(blob => {
+                    try {
+                        if (downloadConfig.type === "GIF")
+                            navigator.clipboard.write([
+                                new ClipboardItem({
+                                    "image/gif": blob
+                                })
+                            ]);
+                        else
+                            navigator.clipboard.write([
+                                new ClipboardItem({
+                                    "image/png": blob
+                                })
+                            ]);
+                        document.body.appendChild(cE({
+                            type: "div",
+                            attr: [["id", "copiedNotice"], ["style", "position:fixed;top:12px;right:12px;width:120px;height:28px;font:13px/28px Anodina,sans-serif;background:#666;color:#fff;padding:6px 12px;border-radius:3px;transition:500ms;"]],
+                            innerText: "已复制 Copied"
+                        }));
+                        setTimeout(() => {
+                            $("#copiedNotice")[0] === undefined ? $("#copiedNotice") : $("#copiedNotice")[0].style.opacity = "0";
+                            setTimeout(() => {
+                                document.body.removeChild($("#copiedNotice")[0] === undefined ? $("#copiedNotice") : $("#copiedNotice")[0]);
+                            }, 500);
+                        }, 2500);
+                    } catch (error) {
+                        console.error(error);
+                    }
+                });
+            };
         } // Button
         {
             response.appendChild(cE({
-                type: "div",
-                attr: [["role", "presentation"], ["class", "externalUsage"]],
-                innerHTML: `<div class='responseTypeName'>使用方式 Usage</div><div><div class='web'>Web: <pre style="height:48px;overflow:scroll;"><code onclick="selectText(this)" class='html' id="htmlUsage">&lt;img src='https://passionpenguin.${config.remoteDomain}.io/ARU/resources/${config.name}-${config.ver}-${downloadConfig.type}-${downloadConfig.size}/${downloadConfig.type}-${downloadConfig.size}/${config.filename[id].sub[index]}.${downloadConfig.type.toLowerCase()}' alt='ARU-${config.filename[id].sub[index]}' /></code></pre>Discuz: <pre style="height:48px;overflow:scroll;"><code onclick="selectText(this)" class="bbcode" id="bbcodeUsage">[img]https://passionpenguin.${config.remoteDomain}.io/ARU/resources/${config.name}-${config.ver}-${downloadConfig.type}-${downloadConfig.size}/${downloadConfig.type}-${downloadConfig.size}/${config.filename[id].sub[index]}.${downloadConfig.type.toLowerCase()}[/img]</code></pre></div></div>`
-            }));
+                    type: "div",
+                    attr: [["role", "presentation"], ["class", "externalUsage"]],
+                    innerHTML: `<div class='responseTypeName'>使用方式 Usage </div><div><div class='web'>Web: <pre style="height:48px;overflow:scroll;"><code onclick="selectText(this)" class='html' id="htmlUsage">&lt;img src='https://passionpenguin.${config.remoteDomain}.io/ARU/resources/${config.name}-${config.ver}-${downloadConfig.type}-${downloadConfig.size}/${downloadConfig.type}-${downloadConfig.size}/${config.filename[id].sub[index]}.${downloadConfig.type.toLowerCase()}' alt='ARU-${config.filename[id].sub[index]}' /></code></pre>Discuz: <pre style="height:48px;overflow:scroll;"><code onclick="selectText(this)" class="bbcode" id="bbcodeUsage">[img]https://passionpenguin.${config.remoteDomain}.io/ARU/resources/${config.name}-${config.ver}-${downloadConfig.type}-${downloadConfig.size}/${downloadConfig.type}-${downloadConfig.size}/${config.filename[id].sub[index]}.${downloadConfig.type.toLowerCase()}[/img]</code></pre></div></div>`
+                }
+            ));
         } // External Usage
     };
     const init = (id) => {
