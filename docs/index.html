@@ -326,6 +326,8 @@
                     selectorEl.querySelector(".active").classList.remove("active");
                     selectorEl.children[1].children[0].classList.add("active");
                     response.children[0].children[0].src = `../resources/${config.name}-${config.ver}-${downloadConfig.type}-${downloadConfig.size}/${downloadConfig.type}-${downloadConfig.size}/${config.filename[id].sub[index]}.${downloadConfig.type.toLowerCase()}`;
+                    $("#bbcodeUsage").innerHTML=`[img]https://passionpenguin.${config.remoteDomain}.io/ARU/resources/${config.name}-${config.ver}-${downloadConfig.type}-${downloadConfig.size}/${downloadConfig.type}-${downloadConfig.size}/${config.filename[id].sub[index]}.${downloadConfig.type.toLowerCase()}[/img]`;
+                    $("#htmlUsage").innerHTML=`&lt;img src='https://passionpenguin.${config.remoteDomain}.io/ARU/resources/${config.name}-${config.ver}-${downloadConfig.type}-${downloadConfig.size}/${downloadConfig.type}-${downloadConfig.size}/${config.filename[id].sub[index]}.${downloadConfig.type.toLowerCase()}' alt='ARU-${config.filename[id].sub[index]}' />`;
                 }
             }));
             selectorEl.children[1].appendChild(cE({
@@ -334,6 +336,8 @@
                     selectorEl.querySelector(".active").classList.remove("active");
                     selectorEl.children[1].children[1].classList.add("active");
                     response.children[0].children[0].src = `../resources/${config.name}-${config.ver}-${downloadConfig.type}-${downloadConfig.size}/${downloadConfig.type}-${downloadConfig.size}/${config.filename[id].sub[index]}.${downloadConfig.type.toLowerCase()}`;
+                    $("#bbcodeUsage").innerHTML=`[img]https://passionpenguin.${config.remoteDomain}.io/ARU/resources/${config.name}-${config.ver}-${downloadConfig.type}-${downloadConfig.size}/${downloadConfig.type}-${downloadConfig.size}/${config.filename[id].sub[index]}.${downloadConfig.type.toLowerCase()}[/img]`;
+                    $("#htmlUsage").innerHTML=`&lt;img src='https://passionpenguin.${config.remoteDomain}.io/ARU/resources/${config.name}-${config.ver}-${downloadConfig.type}-${downloadConfig.size}/${downloadConfig.type}-${downloadConfig.size}/${config.filename[id].sub[index]}.${downloadConfig.type.toLowerCase()}' alt='ARU-${config.filename[id].sub[index]}' />`;
                 }
             }));
             response.appendChild(selectorEl);
@@ -353,6 +357,8 @@
                     selectorEl.querySelector(".active").classList.remove("active");
                     selectorEl.children[1].children[0].classList.add("active");
                     response.children[0].children[0].src = `../resources/${config.name}-${config.ver}-${downloadConfig.type}-${downloadConfig.size}/${downloadConfig.type}-${downloadConfig.size}/${config.filename[id].sub[index]}.${downloadConfig.type.toLowerCase()}`;
+                    $("#bbcodeUsage").innerHTML=`[img]https://passionpenguin.${config.remoteDomain}.io/ARU/resources/${config.name}-${config.ver}-${downloadConfig.type}-${downloadConfig.size}/${downloadConfig.type}-${downloadConfig.size}/${config.filename[id].sub[index]}.${downloadConfig.type.toLowerCase()}[/img]`;
+                    $("#htmlUsage").innerHTML=`&lt;img src='https://passionpenguin.${config.remoteDomain}.io/ARU/resources/${config.name}-${config.ver}-${downloadConfig.type}-${downloadConfig.size}/${downloadConfig.type}-${downloadConfig.size}/${config.filename[id].sub[index]}.${downloadConfig.type.toLowerCase()}' alt='ARU-${config.filename[id].sub[index]}' />`;
                 }
             }));
             selectorEl.children[1].appendChild(cE({
@@ -361,6 +367,8 @@
                     selectorEl.querySelector(".active").classList.remove("active");
                     selectorEl.children[1].children[1].classList.add("active");
                     response.children[0].children[0].src = `../resources/${config.name}-${config.ver}-${downloadConfig.type}-${downloadConfig.size}/${downloadConfig.type}-${downloadConfig.size}/${config.filename[id].sub[index]}.${downloadConfig.type.toLowerCase()}`;
+                    $("#bbcodeUsage").innerHTML=`[img]https://passionpenguin.${config.remoteDomain}.io/ARU/resources/${config.name}-${config.ver}-${downloadConfig.type}-${downloadConfig.size}/${downloadConfig.type}-${downloadConfig.size}/${config.filename[id].sub[index]}.${downloadConfig.type.toLowerCase()}[/img]`;
+                    $("#htmlUsage").innerHTML=`&lt;img src='https://passionpenguin.${config.remoteDomain}.io/ARU/resources/${config.name}-${config.ver}-${downloadConfig.type}-${downloadConfig.size}/${downloadConfig.type}-${downloadConfig.size}/${config.filename[id].sub[index]}.${downloadConfig.type.toLowerCase()}' alt='ARU-${config.filename[id].sub[index]}' />`;
                 }
             }));
             selectorEl.children[1].appendChild(cE({
@@ -369,6 +377,8 @@
                     selectorEl.querySelector(".active").classList.remove("active");
                     selectorEl.children[1].children[2].classList.add("active");
                     response.children[0].children[0].src = `../resources/${config.name}-${config.ver}-${downloadConfig.type}-${downloadConfig.size}/${downloadConfig.type}-${downloadConfig.size}/${config.filename[id].sub[index]}.${downloadConfig.type.toLowerCase()}`;
+                    $("#bbcodeUsage").innerHTML=`[img]https://passionpenguin.${config.remoteDomain}.io/ARU/resources/${config.name}-${config.ver}-${downloadConfig.type}-${downloadConfig.size}/${downloadConfig.type}-${downloadConfig.size}/${config.filename[id].sub[index]}.${downloadConfig.type.toLowerCase()}[/img]`;
+                    $("#htmlUsage").innerHTML=`&lt;img src='https://passionpenguin.${config.remoteDomain}.io/ARU/resources/${config.name}-${config.ver}-${downloadConfig.type}-${downloadConfig.size}/${downloadConfig.type}-${downloadConfig.size}/${config.filename[id].sub[index]}.${downloadConfig.type.toLowerCase()}' alt='ARU-${config.filename[id].sub[index]}' />`;
                 }
             }));
             response.appendChild(selectorEl);
@@ -395,7 +405,7 @@
             response.appendChild(cE({
                 type: "div",
                 attr: [["role", "presentation"], ["class", "externalUsage"]],
-                innerHTML: `<div class='responseTypeName'>使用方式 Usage</div><div><div class='web'>Web: <pre style="height:48px;overflow:scroll;"><code class='html'>&lt;img src='https://passionpenguin.${config.remoteDomain}.io/ARU/resources/${config.name}-${config.ver}-${downloadConfig.type}-${downloadConfig.size}/${downloadConfig.type}-${downloadConfig.size}/${config.filename[id].sub[index]}.${downloadConfig.type.toLowerCase()}' alt='ARU-${config.filename[id].sub[index]}' /></code></pre>Discuz: <pre style="height:48px;overflow:scroll;"><code class="bbcode">[img]https://passionpenguin.${config.remoteDomain}.io/ARU/resources/${config.name}-${config.ver}-${downloadConfig.type}-${downloadConfig.size}/${downloadConfig.type}-${downloadConfig.size}/${config.filename[id].sub[index]}.${downloadConfig.type.toLowerCase()}[/img]</code></pre></div></div>`
+                innerHTML: `<div class='responseTypeName'>使用方式 Usage</div><div><div class='web'>Web: <pre style="height:48px;overflow:scroll;"><code class='html' id="htmlUsage">&lt;img src='https://passionpenguin.${config.remoteDomain}.io/ARU/resources/${config.name}-${config.ver}-${downloadConfig.type}-${downloadConfig.size}/${downloadConfig.type}-${downloadConfig.size}/${config.filename[id].sub[index]}.${downloadConfig.type.toLowerCase()}' alt='ARU-${config.filename[id].sub[index]}' /></code></pre>Discuz: <pre style="height:48px;overflow:scroll;"><code class="bbcode" id="bbcodeUsage">[img]https://passionpenguin.${config.remoteDomain}.io/ARU/resources/${config.name}-${config.ver}-${downloadConfig.type}-${downloadConfig.size}/${downloadConfig.type}-${downloadConfig.size}/${config.filename[id].sub[index]}.${downloadConfig.type.toLowerCase()}[/img]</code></pre></div></div>`
             }));
         } // External Usage
     };
