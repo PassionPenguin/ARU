@@ -64,7 +64,7 @@
       <workItem from="1587612697382" duration="1175000" />
       <workItem from="1587614109828" duration="20000" />
       <workItem from="1587614146723" duration="10491000" />
-      <workItem from="1587695715318" duration="1710000" />
+      <workItem from="1587695715318" duration="2530000" />
     </task>
     <task id="LOCAL-00001" summary="init readme.md">
       <created>1587613394466</created>
@@ -136,7 +136,14 @@
       <option name="project" value="LOCAL" />
       <updated>1587697096994</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="added rule: updates usage after changing the config">
+      <created>1587697502434</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1587697502434</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -152,21 +159,22 @@
     <MESSAGE value="update filemode =&gt; 777" />
     <MESSAGE value="added description" />
     <MESSAGE value="fixed error" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixed error" />
+    <MESSAGE value="added rule: updates usage after changing the config" />
+    <option name="LAST_COMMIT_MESSAGE" value="added rule: updates usage after changing the config" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="427" y="43" key="CommitChangelistDialog2" timestamp="1587697096135">
+    <state x="427" y="43" key="CommitChangelistDialog2" timestamp="1587697501627">
       <screen x="0" y="23" width="1680" height="1027" />
     </state>
-    <state x="427" y="43" key="CommitChangelistDialog2/0.23.1680.1027@0.23.1680.1027" timestamp="1587697096135" />
+    <state x="427" y="43" key="CommitChangelistDialog2/0.23.1680.1027@0.23.1680.1027" timestamp="1587697501627" />
     <state x="168" y="114" key="DiffContextDialog" timestamp="1587613372782">
       <screen x="0" y="23" width="1680" height="1027" />
     </state>
     <state x="168" y="114" key="DiffContextDialog/0.23.1680.1027@0.23.1680.1027" timestamp="1587613372782" />
-    <state x="440" y="272" key="Vcs.Push.Dialog.v2" timestamp="1587697098244">
+    <state x="440" y="272" key="Vcs.Push.Dialog.v2" timestamp="1587697503840">
       <screen x="0" y="23" width="1680" height="1027" />
     </state>
-    <state x="440" y="272" key="Vcs.Push.Dialog.v2/0.23.1680.1027@0.23.1680.1027" timestamp="1587697098244" />
+    <state x="440" y="272" key="Vcs.Push.Dialog.v2/0.23.1680.1027@0.23.1680.1027" timestamp="1587697503840" />
     <state x="634" y="195" key="com.intellij.openapi.vcs.changes.SpecificFilesViewDialog" timestamp="1587613377956">
       <screen x="0" y="23" width="1680" height="1027" />
     </state>
