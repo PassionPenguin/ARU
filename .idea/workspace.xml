@@ -64,7 +64,7 @@
       <workItem from="1587612697382" duration="1175000" />
       <workItem from="1587614109828" duration="20000" />
       <workItem from="1587614146723" duration="10491000" />
-      <workItem from="1587695715318" duration="4610000" />
+      <workItem from="1587695715318" duration="5540000" />
     </task>
     <task id="LOCAL-00001" summary="init readme.md">
       <created>1587613394466</created>
@@ -171,7 +171,14 @@
       <option name="project" value="LOCAL" />
       <updated>1587707031410</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="added &quot;copy image&quot; method &amp; button =&gt; index.html">
+      <created>1587708134461</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1587708134461</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -194,21 +201,23 @@
     <MESSAGE value="add a tip after clicking &lt;code&gt;" />
     <MESSAGE value="fixed more-than-one tip removal" />
     <MESSAGE value="fixed" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixed" />
+    <MESSAGE value="update" />
+    <MESSAGE value="added &quot;copy image&quot; method &amp; button =&gt; index.html" />
+    <option name="LAST_COMMIT_MESSAGE" value="added &quot;copy image&quot; method &amp; button =&gt; index.html" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="427" y="43" key="CommitChangelistDialog2" timestamp="1587707030147">
+    <state x="427" y="43" key="CommitChangelistDialog2" timestamp="1587708129446">
       <screen x="0" y="23" width="1680" height="1027" />
     </state>
-    <state x="427" y="43" key="CommitChangelistDialog2/0.23.1680.1027@0.23.1680.1027" timestamp="1587707030147" />
+    <state x="427" y="43" key="CommitChangelistDialog2/0.23.1680.1027@0.23.1680.1027" timestamp="1587708129446" />
     <state x="168" y="114" key="DiffContextDialog" timestamp="1587613372782">
       <screen x="0" y="23" width="1680" height="1027" />
     </state>
     <state x="168" y="114" key="DiffContextDialog/0.23.1680.1027@0.23.1680.1027" timestamp="1587613372782" />
-    <state x="440" y="272" key="Vcs.Push.Dialog.v2" timestamp="1587707031993">
+    <state x="440" y="272" key="Vcs.Push.Dialog.v2" timestamp="1587708131593">
       <screen x="0" y="23" width="1680" height="1027" />
     </state>
-    <state x="440" y="272" key="Vcs.Push.Dialog.v2/0.23.1680.1027@0.23.1680.1027" timestamp="1587707031993" />
+    <state x="440" y="272" key="Vcs.Push.Dialog.v2/0.23.1680.1027@0.23.1680.1027" timestamp="1587708131593" />
     <state x="634" y="195" key="com.intellij.openapi.vcs.changes.SpecificFilesViewDialog" timestamp="1587613377956">
       <screen x="0" y="23" width="1680" height="1027" />
     </state>

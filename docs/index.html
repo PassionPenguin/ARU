@@ -399,13 +399,13 @@
                 attr: [["role", "buttonGroup"], ["class", "buttonGroup"], ["style", "margin-top:12px;background:transparent;"]],
                 innerHTML: `<div role="button" ripple>复制 Copy</div><div role="button" ripple>下载 Download</div>`,
             }));
-            response.lastElementChild.children[0].onclick = () => {
+            response.lastElementChild.children[1].onclick = () => {
                 cE({
                     type: "a",
                     attr: [["download", `${config.filename[id].sub[index]}.${downloadConfig.size}.${downloadConfig.type}`], ["href", `../resources/${config.name}-${config.ver}-${downloadConfig.type}-${downloadConfig.size}/${downloadConfig.type}-${downloadConfig.size}/${config.filename[id].sub[index]}.${downloadConfig.type.toLowerCase()}`]]
                 }).click();
             };
-            response.lastElementChild.children[1].onclick = () => {
+            response.lastElementChild.children[0].onclick = () => {
                 new Promise(function (resolve, reject) {
                     try {
                         let xhr = new XMLHttpRequest();
