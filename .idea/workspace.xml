@@ -1,9 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
+<<<<<<< Updated upstream
     <list default="true" id="3025239e-d040-4e93-8879-0398c5695ee7" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+=======
+    <list default="true" id="3025239e-d040-4e93-8879-0398c5695ee7" name="Default Changelist" comment="compress images(some may be bigger, some may be smaller...) with pngquant &amp; gifsicle">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+>>>>>>> Stashed changes
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -64,6 +69,11 @@
       <workItem from="1587612697382" duration="1175000" />
       <workItem from="1587614109828" duration="20000" />
       <workItem from="1587614146723" duration="10491000" />
+<<<<<<< Updated upstream
+=======
+      <workItem from="1587695715318" duration="7579000" />
+      <workItem from="1587726621954" duration="115000" />
+>>>>>>> Stashed changes
     </task>
     <task id="LOCAL-00001" summary="init readme.md">
       <created>1587613394466</created>
@@ -100,7 +110,102 @@
       <option name="project" value="LOCAL" />
       <updated>1587653854733</updated>
     </task>
+<<<<<<< Updated upstream
     <option name="localTasksCounter" value="6" />
+=======
+    <task id="LOCAL-00006" summary="update README.md">
+      <created>1587653915253</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1587653915253</updated>
+    </task>
+    <task id="LOCAL-00007" summary="update sidebar">
+      <created>1587696174538</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1587696174538</updated>
+    </task>
+    <task id="LOCAL-00008" summary="update filemode =&gt; 777">
+      <created>1587697034111</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1587697034111</updated>
+    </task>
+    <task id="LOCAL-00009" summary="added description">
+      <created>1587697049019</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1587697049019</updated>
+    </task>
+    <task id="LOCAL-00010" summary="fixed error">
+      <created>1587697096994</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1587697096994</updated>
+    </task>
+    <task id="LOCAL-00011" summary="added rule: updates usage after changing the config">
+      <created>1587697502434</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1587697502434</updated>
+    </task>
+    <task id="LOCAL-00012" summary="select and copy code after clicking the &lt;code&gt;">
+      <created>1587706014450</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1587706014450</updated>
+    </task>
+    <task id="LOCAL-00013" summary="add a tip after clicking &lt;code&gt;">
+      <created>1587706317398</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1587706317399</updated>
+    </task>
+    <task id="LOCAL-00014" summary="fixed more-than-one tip removal">
+      <created>1587706614909</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1587706614909</updated>
+    </task>
+    <task id="LOCAL-00015" summary="fixed">
+      <created>1587707031410</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1587707031410</updated>
+    </task>
+    <task id="LOCAL-00016" summary="added &quot;copy image&quot; method &amp; button =&gt; index.html">
+      <created>1587708134461</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1587708134461</updated>
+    </task>
+    <task id="LOCAL-00017" summary="fixed....">
+      <created>1587709120178</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1587709120178</updated>
+    </task>
+    <task id="LOCAL-00018" summary="compress images(some may be bigger, some may be smaller...) with pngquant &amp; gifsicle">
+      <created>1587715552849</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1587715552849</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
+>>>>>>> Stashed changes
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -111,6 +216,7 @@
     <MESSAGE value="update cover" />
     <MESSAGE value="update project &amp; HTML" />
     <MESSAGE value="clone from Baidu Cloud Disk" />
+<<<<<<< Updated upstream
     <option name="LAST_COMMIT_MESSAGE" value="clone from Baidu Cloud Disk" />
   </component>
   <component name="WindowStateProjectService">
@@ -118,14 +224,46 @@
       <screen x="0" y="23" width="1680" height="1027" />
     </state>
     <state x="427" y="43" key="CommitChangelistDialog2/0.23.1680.1027@0.23.1680.1027" timestamp="1587653850468" />
+=======
+    <MESSAGE value="update README.md" />
+    <MESSAGE value="update sidebar" />
+    <MESSAGE value="update filemode =&gt; 777" />
+    <MESSAGE value="added description" />
+    <MESSAGE value="fixed error" />
+    <MESSAGE value="added rule: updates usage after changing the config" />
+    <MESSAGE value="onselect" />
+    <MESSAGE value="select and copy code after clicking the &lt;code&gt;" />
+    <MESSAGE value="add tip after clicking &lt;code&gt;" />
+    <MESSAGE value="add a tip after clicking &lt;code&gt;" />
+    <MESSAGE value="fixed more-than-one tip removal" />
+    <MESSAGE value="fixed" />
+    <MESSAGE value="update" />
+    <MESSAGE value="added &quot;copy image&quot; method &amp; button =&gt; index.html" />
+    <MESSAGE value="fixed...." />
+    <MESSAGE value="compress images(some may be bigger, some may be smaller...) with pngquant &amp; gifsicle" />
+    <option name="LAST_COMMIT_MESSAGE" value="compress images(some may be bigger, some may be smaller...) with pngquant &amp; gifsicle" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="427" y="43" key="CommitChangelistDialog2" timestamp="1587726319038">
+      <screen x="0" y="23" width="1680" height="1027" />
+    </state>
+    <state x="427" y="43" key="CommitChangelistDialog2/0.23.1680.1027@0.23.1680.1027" timestamp="1587726319038" />
+>>>>>>> Stashed changes
     <state x="168" y="114" key="DiffContextDialog" timestamp="1587613372782">
       <screen x="0" y="23" width="1680" height="1027" />
     </state>
     <state x="168" y="114" key="DiffContextDialog/0.23.1680.1027@0.23.1680.1027" timestamp="1587613372782" />
+<<<<<<< Updated upstream
     <state x="440" y="272" key="Vcs.Push.Dialog.v2" timestamp="1587613623724">
       <screen x="0" y="23" width="1680" height="1027" />
     </state>
     <state x="440" y="272" key="Vcs.Push.Dialog.v2/0.23.1680.1027@0.23.1680.1027" timestamp="1587613623724" />
+=======
+    <state x="440" y="272" key="Vcs.Push.Dialog.v2" timestamp="1587715556607">
+      <screen x="0" y="23" width="1680" height="1027" />
+    </state>
+    <state x="440" y="272" key="Vcs.Push.Dialog.v2/0.23.1680.1027@0.23.1680.1027" timestamp="1587715556607" />
+>>>>>>> Stashed changes
     <state x="634" y="195" key="com.intellij.openapi.vcs.changes.SpecificFilesViewDialog" timestamp="1587613377956">
       <screen x="0" y="23" width="1680" height="1027" />
     </state>
